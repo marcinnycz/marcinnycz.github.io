@@ -1,0 +1,44 @@
+<div class="grid-container">
+    <div class="welcome">
+        <h2>
+            Witaj Janie!
+        </h2>
+    </div>
+    <div class="zaplanowane">
+        <mat-card class="card">
+            <mat-card-header>
+              <mat-card-title>Planowane treningi</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-selection-list #shoes [multiple]="false">
+                    <mat-list-option *ngFor="let zaplanowane of zaplanowaneList" [value]="zaplanowane">
+                      {{zaplanowane}}
+                    </mat-list-option>
+                </mat-selection-list>
+            </mat-card-content>
+            <mat-card-actions>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+    <div class="odbyte">
+        <mat-card class="card">
+            <mat-card-header>
+              <mat-card-title>Archiwum treningów</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-selection-list #shoes [multiple]="false">
+                    <mat-list-option *ngFor="let odbyte of odbyteList" [value]="odbyte">
+                      {{odbyte}}
+                    </mat-list-option>
+                </mat-selection-list>
+            </mat-card-content>
+            <mat-card-actions>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+    <div class="date">
+        <mat-card class="demo-inline-calendar-card">
+            <mat-calendar (selectedChange)="selected = $event"></mat-calendar>
+        </mat-card>
+    </div>
+</div>

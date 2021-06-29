@@ -1,0 +1,42 @@
+.grid-container{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-gap: 0;
+    grid: 100px auto / auto auto;
+  }
+
+  .welcome{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    height: auto;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 30px;
+  }
+
+  .picker{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    height: auto;
+    display: flex;
+    justify-content: left;
+  }
+
+  .graph{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .chart{
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }

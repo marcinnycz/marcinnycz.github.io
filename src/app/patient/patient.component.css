@@ -1,0 +1,54 @@
+.grid-container{
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-gap: 0;
+  grid: 100px auto auto / auto auto;
+}
+.welcome{
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  height: auto;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.zaplanowane{
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  height: auto;
+  display: flex;
+  justify-content: left;
+}
+
+.odbyte{
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  height: auto;
+  display: flex;
+  justify-content: left;
+}
+
+.date{
+  grid-column: 2 / 3;
+  grid-row: 2 / 4;
+  height: auto;
+  width: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.demo-inline-calendar-card {
+  margin: 20px;
+  width: 300px;
+}
+
+.card {
+  margin: 20px;
+  padding: 10px;
+  height: auto;
+  width: 100%;
+  max-width: 800px;
+}

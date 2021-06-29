@@ -1,0 +1,27 @@
+#construction{
+  vertical-align: middle;
+  height: 50px;
+  width: 50px;
+}
+#inProgress{
+  font-size: 20px;
+}
+
+.container{
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.card {
+  margin: 20px;
+  padding: 10px;
+  height: auto;
+  max-width: 400px;
+}
+
+.card img{
+  object-fit: contain; /*this makes the image in src fit to the size specified below*/
+  width: 100%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+  height: 100px;
+  margin: 0;
+}

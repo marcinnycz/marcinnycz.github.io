@@ -1,0 +1,97 @@
+<div class="grid-container">
+    <div class="grid-toolbar">
+        <mat-toolbar color = primary>
+            <div id="Logo">
+                <img src="..\\assets\\D4S_logo_white.png" alt="Logo" />
+            </div>
+            <button mat-button routerLink="home">
+                Strona główna
+            </button>
+            <button mat-button routerLink="modules">
+                Moduły
+            </button>
+            <button mat-button routerLink="monograph">
+                Monografia
+            </button>
+            <button mat-button routerLink="publications">
+                Publikacje
+            </button>
+            <button mat-button routerLink="contact">
+                Kontakt
+            </button>
+            <button mat-button routerLink="faq">
+                FAQ
+            </button>
+            <span class ="spacer"></span>
+            <button mat-button routerLink="login" *ngIf="!isAuthenticated">
+                Zaloguj
+            </button>
+            <button mat-button *ngIf="isAuthenticated" (click)="profile()">
+                <svg *ngIf="isAuthenticated" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"/></svg>
+                <span id="name" *ngIf="isAuthenticated">
+                    Jan Kowalski
+                </span>
+            </button>
+            
+            <button mat-button *ngIf="isAuthenticated" (click)="logout()">
+                <mat-icon id="exitIcon">exit_to_app</mat-icon>
+                <span>
+                    Wyloguj
+                </span>
+            </button>
+            
+
+        </mat-toolbar>
+    </div>
+    
+    <div class="grid-sidebar" *ngIf="isAuthenticated">
+        <mat-drawer-container class="example-container" autosize>
+            <mat-drawer #drawer class="example-sidenav" mode="side" opened="true">
+                <mat-list class="mat-list" role="list">
+                    <mat-list-item class="listitem" role="listitem">
+                        <button mat-button id="button1" routerLink="patient">
+                            <svg width="6" height="48" class="selectionMarker" *ngIf="router.url == '/patient'">
+                                <rect width="6" height="48" style="fill:#1a237e" />
+                            </svg>
+                            <svg width="6" height="48" class="selectionMarker" *ngIf="router.url != '/patient'">
+                                <rect width="6" height="48" style="fill:rgba(0,0,0,0)" />
+                            </svg>
+                            <mat-icon aria-hidden="false" aria-label="Home icon">home</mat-icon>
+                            <span class="listSpan">Profil</span>
+                        </button>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item class="listitem" role="listitem">
+                        <button mat-button id="button2" routerLink="analysis">
+                            <svg width="6" height="48" class="selectionMarker" *ngIf="router.url == '/analysis'">
+                                <rect width="6" height="48" style="fill:#1a237e" />
+                            </svg>
+                            <svg width="6" height="48" class="selectionMarker" *ngIf="router.url != '/analysis'">
+                                <rect width="6" height="48" style="fill:rgba(0,0,0,0)" />
+                            </svg>
+                            <mat-icon aria-hidden="false" aria-label="Pie chart icon">pie_chart</mat-icon>
+                            <span class="listSpan">Analiza</span>
+                        </button>
+                    </mat-list-item>
+                </mat-list>
+            </mat-drawer>
+          
+            <div class="example-sidenav-content">
+                <button  id="sidenavToggleButton" type="button" mat-button (click)="drawer.toggle()">
+                    <mat-icon aria-hidden="false" aria-label="Arrow right icon" *ngIf="!drawer.opened" class="arrowIcon">
+                        chevron_right
+                    </mat-icon>
+                    <mat-icon aria-hidden="false" aria-label="Arrow left icon" *ngIf="drawer.opened" class="arrowIcon">
+                        chevron_left
+                    </mat-icon>
+                </button>
+            </div>
+          
+        </mat-drawer-container>
+        
+    </div>
+    <div class="grid-outlet">
+        <router-outlet></router-outlet>
+    </div>
+    
+</div>
