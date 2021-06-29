@@ -25,7 +25,8 @@
     grid-gap: 0;
     grid: auto / auto auto;
     display: flex;
-    justify-content: left;
+    justify-content: center;
+    padding-right: 15vw;
   }
   .card1{
     grid-column: 2 / 3;
