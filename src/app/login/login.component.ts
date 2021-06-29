@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
         const username = this.form.get('username')?.value;
         const password = this.form.get('password')?.value;
         await this.authService.login(username, password);
+        this.router.navigate(['/patient']);
       } catch (err) {
         this.loginInvalid = true;
       }
